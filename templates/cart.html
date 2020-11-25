@@ -51,8 +51,9 @@
 						        <td class="total">$4.90</td>
 						      </tr><!-- END TR-->
 
+							
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove" id="tick"><a href="#"><span class="ion-ios-close"></span></a></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
 						        
@@ -155,7 +156,15 @@
           </div>
         </div>
       </div>
-    </section>
+	</section>
+	
+	<script>
+		document.addEventListener('click',function(e){
+			if(e.target && e.target.id == 'tick'){
+				e.target.parentNode.remove();
+			}
+		})
+	</script>
 	
 {% endblock %}
 
