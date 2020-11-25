@@ -8,5 +8,8 @@ module.exports = {
     connection: {
       filename: './data/vegefoods.db3'
     }
+  },
+  production : {
+    
   }
 };
