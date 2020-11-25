@@ -6,6 +6,7 @@ const User = require('../models/dbHelper');
 
 const redirectlogin = (req,res,next) => {
     if (!req.session.userId) {
+        console.log(`/n*** ${req.session} ***/n`)
         res.redirect('/signin');
     }
     else{
