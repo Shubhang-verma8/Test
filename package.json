@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server" : "nodemon index.js",
+    "server": "nodemon index.js",
     "start": "node index.js"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "knex": "^0.21.7",
     "nodemailer": "^6.4.16",
     "nunjucks": "^3.2.2",
+    "pg": "^8.5.1",
     "req-flash": "0.0.3",
     "request": "^2.88.2",
     "sqlite3": "^5.0.0"
