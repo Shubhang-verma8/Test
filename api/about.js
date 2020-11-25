@@ -13,6 +13,10 @@ router.get('/', (req, res) => {
                 const user = { id: authUser.id, name: authUser.first_name + authUser.last_name, email: authUser.email }
                 res.status(200).render('about.html', { user });
             })
+            .catch(err => {
+                console.log('error in about route main');
+                res.redirect('/oops')
+            })
         }
         else {
             console.log('no session about');
@@ -20,7 +24,8 @@ router.get('/', (req, res) => {
         }
     }
     catch(err){
-        res.send('some wrong')
+        console.log('error in about route');
+        res.redirect('/oops')
     }
     
 })

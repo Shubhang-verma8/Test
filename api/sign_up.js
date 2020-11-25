@@ -40,7 +40,8 @@ router.post('/',redirecthome,(req,res) => {
                         res.status(200).redirect('/signin');
                     })
                     .catch(error => {
-                        res.status(404).send("Something went wrong!!");
+                        console.log('error in signup route main');
+                        res.redirect('/oops')
                     })
                     
                 });
@@ -48,7 +49,8 @@ router.post('/',redirecthome,(req,res) => {
         }
     })
     .catch(error => {
-        res.status(500).send('some error');
+        console.log('error in signup route main');
+        res.redirect('/oops')
     })
     
 });

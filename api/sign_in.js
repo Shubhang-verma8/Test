@@ -39,7 +39,8 @@ router.post('/',redirecthome,(req,res) => {
         }
     })
     .catch(error => {
-        res.status(500).send("some error ")
+        console.log('error in signin route main');
+        res.redirect('/oops')
     })
 })
 

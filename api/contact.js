@@ -34,6 +34,10 @@ router.get('/',(req,res) => {
                 const user = {id : authUser.id, name : authUser.first_name + authUser.last_name, email : authUser.email}
                 res.status(200).render('contact.html',{user});
             })
+            .catch(err => {
+                console.log('error in contact route main');
+                res.redirect('/oops')
+            })
         }
         else{
             console.log('no session contact');
@@ -41,7 +45,8 @@ router.get('/',(req,res) => {
         }
     }
     catch(err){
-        res.status(500).send("some wrong");
+        console.log('error in contact route');
+        res.redirect('/oops')
     }
 })
 
@@ -57,7 +62,8 @@ router.post('/',redirectlogin , (req,res) => {
     console.log(data['email']);
     transporter.sendMail(mailOptions , (err , info) => {
         if (err) {
-            console.log(err);
+            console.log('error in contact route email');
+            res.redirect('/oops')
         }
         else{
             console.log('Email send : ' + info.response);

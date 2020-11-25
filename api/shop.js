@@ -18,7 +18,8 @@ router.get('/',redirectlogin,(req,res) => {
         res.locals.items = items;
     })
     .catch(err => {
-        console.log('some wrong');
+        console.log('error in shop route main');
+        res.redirect('/oops')
     })
     User.findByid(req.session.userId).then(authuser => {
         const user = {id:authuser.id, email : authuser.email, name:authuser.first_name + ' ' + authuser.last_name };
@@ -26,7 +27,8 @@ router.get('/',redirectlogin,(req,res) => {
         res.status(200).render('shop.html',{user});
     })
     .catch(error => {
-        res.status(200).send('some wrong');
+        console.log('error in shop route main');
+        res.redirect('/oops')
     })
     
 })

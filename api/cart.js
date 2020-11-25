@@ -23,7 +23,8 @@ router.get('/',redirectlogin,(req,res) => {
         res.status(200).render('cart.html',{user});
     })
     .catch(error => {
-        res.status(500).send('something get wrong');
+        console.log('error in cart route main');
+        res.redirect('/oops')
     })
     
     

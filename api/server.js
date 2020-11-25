@@ -91,7 +91,7 @@ server.use('/cart',require('./cart'));
 server.use('/signin',require('./sign_in'));
 server.use('/signup',require('./sign_up'));
 
-server.get('/oom',(req,res) => {
+server.get('/oops',(req,res) => {
   req.flash('successMessage', 'You are successfully using req-flash');
   console.log(res.locals['flash']);
   res.render('OOPs.html');
@@ -107,7 +107,8 @@ server.post('/additems',(req,res) => {
     console.log(item);
   })
   .catch(err => {
-    console.log('some wrong')
+    console.log('error in server route main');
+    res.redirect('/oops')
   })
   res.redirect('/additems');
 })
@@ -120,7 +121,8 @@ server.get('/desc/:id',(req,res) => {
     res.status(200).render('item_desc.html',{item : item});
   })
   .catch(err => {
-    console.log('some wrong!');
+    console.log('error in server route main');
+    res.redirect('/oops')
   })
 })
 
