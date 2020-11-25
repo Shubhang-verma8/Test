@@ -46,7 +46,10 @@ server.get('/trifle', (req, res) => {
 });
 
 
-server.use(session({
+server.use(session({  
+  store :  new (require('connect-pg-simple')(session))({
+    conString : process.env.DATABASE_URL
+  }),
   name : SESS_NAME,
   resave : false,
   saveUninitialized : false,
