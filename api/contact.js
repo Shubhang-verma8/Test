@@ -50,7 +50,7 @@ router.get('/',(req,res) => {
     }
 })
 
-router.post('/' , (req,res) => {
+router.post('/',redirectlogin , (req,res) => {
     const data = req.body;
     console.log(data);
     var mailOptions = {

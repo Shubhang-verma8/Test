@@ -14,7 +14,7 @@ const redirectlogin = (req,res,next) => {
     }
 }
 
-router.get('/',(req,res) => {
+router.get('/',redirectlogin,(req,res) => {
     User.getallitems().then(items => {
         res.locals.items = items;
     })

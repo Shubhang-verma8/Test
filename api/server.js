@@ -46,7 +46,7 @@ server.get('/trifle', (req, res) => {
 });
 
 
-server.set('trust proxy',1);
+server.set('trust proxy',3);
 
 server.use(session({  
   store :  new (require('connect-pg-simple')(session))({
