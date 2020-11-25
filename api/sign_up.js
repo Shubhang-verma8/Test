@@ -5,13 +5,26 @@ const router = express.Router();
 
 const saltRounds = 10;
 
+
+
 const Users = require('../models/dbHelper');
 
-router.get('/',(req,res) => {
+const redirecthome = (req,res,next) => {
+    if (req.session.userId) {
+        res.redirect('/shop');
+    }
+    else{
+        next();
+    }
+}
+
+
+router.get('/',redirecthome,(req,res) => {
     res.status(200).render('sign_up.html');
 });
 
-router.post('/',(req,res) => {
+
+router.post('/',redirecthome,(req,res) => {
     const newUser = req.body;
     Users.findByemail(newUser['email']).then(user => {
         if(user){

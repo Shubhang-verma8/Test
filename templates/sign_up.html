@@ -168,12 +168,12 @@
 </style>
 <body>
     <section class="main">
-        <img src="../static/images/Screenshot (204).png" alt="">
+        <img src="/static/images/Screenshot (204).png" alt="">
 
         <section class="b">
 			<h2>Sign up</h2>
 			<br><br><br>
-            <form action="/signup" method="POST" >
+            <form action="/signup" method="POST">
                 
                <article id="name">
 				   <input type="text" id="first_name" class="name" name="first_name" placeholder="First Name" required
@@ -190,6 +190,7 @@
 
 			   <br>
 			   <input type="password" name="password" id="password" name="password" placeholder="Password" required
+			   
 			   title="Min alphabet should be 6">
 
 			   <br>
@@ -200,7 +201,7 @@
 				<br><br>
 				<article  style="width: 90%; display: flex; justify-content: left;">
 					<button type="submit" id="sign_up">Sign Up</button>
-					<p>Have an account? &nbsp<a href="sign_in.html" >Sign in</a></p>
+					<p>Have an account? &nbsp<a href="/signin" >Sign in</a></p>
 				</article>
 			</form>
 

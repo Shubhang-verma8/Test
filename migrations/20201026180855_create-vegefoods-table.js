@@ -8,9 +8,18 @@ exports.up = function (knex) {
         table.string('password').notNullable();
         table.timestamps(true, true);
     })
+    .createTable('items', table => {
+        table.increments('product_id').primary();
+        table.string('category').notNullable();
+        table.string('product_name').notNullable();
+        table.integer('product_price').notNullable();
+        table.string('product_image').notNullable();
+        table.integer('quantity').notNullable(); 
+    })
+    
 
 };
 
 exports.down = function (knex) {
-    return knex.schema.dropTableIfExists('users');
+    return knex.schema.dropTableIfExists('users').dropTableIfExists('items');
 };
